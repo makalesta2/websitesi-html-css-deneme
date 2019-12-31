@@ -1,0 +1,155 @@
+body {
+	font-family: font-family: 'Oswald', sans-serif;
+	font-size: 14px;
+}
+
+.clear {			/* background içine anasayfa hakkımızda yazar*/
+	clear: both;
+}
+.container {
+	max-width: 1000px; /* max width yapınca ekran daralsa bile ona göre kendini ayarlar.*/
+	margin: 0 auto;
+	overflow: hidden; /* sağdan soldan taşma olmasın diye ayarlıyoruz.*/
+
+}	
+
+/* HEADER */
+header {
+	background: #F2F5F4;
+	
+}
+
+header .logo {
+	width: 50px;
+	margin: 0 auto;  /*0 alttan ve üstten boşluk bırakma, auto ise sağdan soldan ortala*/
+	color: #1CD67C;
+	font-size: 24px;
+	/* float: left;  logo solda olup anasayfa hakkımızda sağdan ayaralmak için */
+}
+
+
+header nav ul {          
+	width: 290px;
+	margin: 0 auto;
+	/* float: right; anasayfa hakkımızda sağa kaydırmak için */
+	
+}
+
+header nav ul li {
+	float: left;      /* anasayfa hakkımızda yazılarını yanyana yazar*/
+	padding: 10px;   /* arada boşluk olur */
+}
+
+header nav ul li a {    /* anasayfa hakkımızda yazılarını rengini değiştirdik*/
+	color: #99A09D;
+}
+
+header nav ul li a:hover {  /* anasayfa hakkımızda yazısına mouse geldiğimizde rengini değiştirmeye yarar. */
+	color: #1CD67C;
+}
+
+/* SLIDER */
+.slider {   /* arkaplan ayarları yapıyoruz*/
+	height: 400px;
+	background: url('../img/wp.jpeg') no-repeat center 70%;   /* resmi ortalamak ve resim çekmek için */
+	background-size: cover;
+	position: relative; /* pozisyonu slider içinde ayarlamak için yazıları yapmak lazım */
+}	
+.slider p.text, .slider p.small-text{
+	position: absolute;
+	
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+	text-align: center;
+	color: #f5f5f5;
+	text-shadow: 1px 1px 1px #555; /* gölgelik veriri yazıya ilk px x ikinci px y için son piksel yoğunluk deiğeri renk */
+
+}
+.slider p.text {
+	
+	font-size: 48px;
+	font-weight: 600;
+	top: 10%;
+	
+}
+
+.slider p.small-text {
+	top: 30%;
+	font-size: 18px;
+}
+
+.content .box {
+	background: #fff;
+	/* border: 1px solid red;	kutuları nasıl olduğu görmek için yaparız */
+	width:  20%;
+	float:left;
+	padding: 10px;
+	box-sizing: border-box; /* genişlik ve yükseklik sabit kalıp padding kendi içinde yer */
+	text-align: center;
+	
+}
+
+.content .box img {
+	width: 100%;
+
+}
+
+.content .box .title {
+	font-size: 18px;
+	padding: 5px;
+}
+
+.content .box .price {
+	font-size: 16px;
+
+}	
+
+.content h1.title {
+	background: #F0E9DC;
+	padding: 10px;
+	font-size: 36px;
+	color: #6F5F5C;
+
+}
+
+footer {
+	background: #F0E9DC;
+	color:  #6F5F5C;
+	text-align: center;
+	padding: 20px 0px;
+	font-size: 18px;
+
+}
+
+/* MEDIA QUERY */
+
+@media all and (max-width: 960px) { /* ekran küçüldüğünde yapması gerekenleri ayarlıyoruz. */
+	.slider p.text {
+		font-size: 42px;
+	}
+	.content .box {
+		width: 33.3%;
+		
+	}
+}
+@media all and (max-width: 480px) {
+	header .logo {
+		float: left;
+	}
+	header nav ul {
+		float: right;
+		background: #6F5F5C;
+		width: 100%;
+	}
+	header nav ul li {
+		float: none;
+		text-align: center;
+	}
+	header nav ul li a {
+		color: #fff;
+	}
+	.content .box {
+		width: 50%;
+	}
+}
